@@ -1,15 +1,15 @@
 # WAZUH-VT-THREATATTACK
 ### An Integrated Framework for Automated Threat Intelligence Incident Response
 
-*Prepared by:* Shifana Sherin O P
+*Prepared by:* Shifana Sherin OP
 
-This repository documents how I deployed and configured Wazuh, an open-source Security Information and Event Management (SIEM) platform, within a Kali Linux environment. My goal for this project was to establish a centralized security monitoring hub that doesn't just collect logs, but actively enriches them and automatically blocks threats.
+This repository documents how I deployed and configured Wazuh, an open-source Security Information and Event Management (SIEM) platform, within a Kali Linux environment. My goal for this project was to establish a centralized security monitoring hub that doesn't just collect logs, but actively enriches them through automated file analysis and blocks active threats in real time.
 
 ## Core Setup & Features
 * *SIEM Core:* Single-node Wazuh stack (Manager, Indexer, Dashboard) running v4.14.0 via Docker Engine.
-* *Integrations:* VirusTotal API (for automated malware hash scanning) and AlienVault OTX (for checking bad network IPs).
-* *Framework Mapping:* Alerts mapped directly to the MITRE ATT&CK Matrix.
-* *Automation:* Active Response rules that trigger local endpoint firewall blocks automatically.
+* *Integrations & Monitoring:* Real-time *File Integrity Monitoring (FIM)* integrated natively with the *VirusTotal API* (for automated malware hash scanning) and *AlienVault OTX* (for checking malicious network IPs).
+* *Framework Mapping:* Alerts mapped directly to the MITRE ATT&CK Matrix to track adversary tactics.
+* *Automation:* Active Response rules configured to trigger local endpoint firewall blocks automatically when a threat is validated.
 
 ---
 
