@@ -1,5 +1,8 @@
 # 🛡️ WAZUH Threat Detection Lab
 
+>Centralized Security Monitoring, Threat Intelligence, and Automated Incident Response
+---
+
 ## 📌 Project Overview
 
 This project documents the deployment and configuration of a Wazuh-based SIEM environment on Kali Linux using Docker.
