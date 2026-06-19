@@ -11,7 +11,7 @@ In this project, I deployed Wazuh using Docker and configured multiple security 
 
 ---
 
-###🛠️ Technologies Used
+### 🛠️ Technologies Used
 
 - Wazuh SIEM
 - Docker
