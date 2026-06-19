@@ -64,7 +64,7 @@ Wazuh Agent
 ---
 
 🏗️ Architecture
-
+```text
 Kali Linux Host
        │
        ▼
@@ -81,7 +81,7 @@ VirusTotal   AlienVault    MITRE ATT&CK
        │
        ▼
  Active Response
-
+```
 ---
 
 ## 🚨 Threat Validation Results
@@ -96,7 +96,7 @@ VirusTotal   AlienVault    MITRE ATT&CK
 ---
 
 📁 Project Structure
-
+```text
 wazuh-docker/
 └── single-node/
     ├── docker-compose.yml
@@ -120,13 +120,13 @@ Key Components:
 * ossec.conf → Agent Configuration, FIM, OTX Integration, Audit Monitoring
 * custom-alienvault.py → Threat Intelligence Lookup
 * firewall-drop → Automated Threat Blocking
-
+```
 ---
 
 🚀 Deployment Steps
 
 Deploy Wazuh Stack
-
+```text
 sudo apt update
 sudo apt install docker.io docker-compose git -y
 
@@ -137,25 +137,25 @@ cd wazuh-docker/single-node
 docker compose -f generate-indexer-certs.yml run --rm generator
 
 docker-compose up -d
-
+```
 Install and Configure Wazuh Agent
-
+```text
 sudo apt install wazuh-agent -y
 sudo nano /var/ossec/etc/ossec.conf
-
+```
 Configure manager address:
-
+```text
 <address>127.0.0.1</address>
 
 Start the agent:
 
 sudo systemctl enable wazuh-agent
 sudo systemctl start wazuh-agent
-
+```
 ---
 
 🖥️ Access Dashboard
-
+```text
 URL
 
 http://127.0.0.1
@@ -163,8 +163,9 @@ http://127.0.0.1
 Default Credentials
 
 Username: admin
-Password: SecretPassword
 
+Password: SecretPassword
+```
 ---
 
 📸 Screenshots
