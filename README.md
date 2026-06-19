@@ -1,14 +1,14 @@
-🛡️ WAZUH Threat Detection Lab
+# 🛡️ WAZUH Threat Detection Lab
 
-📌 Project Overview
+## 📌 Project Overview
 
-As part of my cybersecurity learning journey, I built a Wazuh-based SIEM lab on Kali Linux to gain practical experience in security monitoring, threat detection, threat intelligence integration, and incident response.
+This project documents the deployment and configuration of a Wazuh-based SIEM environment on Kali Linux using Docker.
 
 In this project, I deployed Wazuh using Docker and configured multiple security capabilities including File Integrity Monitoring (FIM), VirusTotal integration, AlienVault OTX threat intelligence, MITRE ATT&CK mapping, and Active Response. The environment was tested using different attack simulation scenarios to validate detection and response functionality.
 
 ---
 
-🛠️ Technologies Used
+###🛠️ Technologies Used
 
 - Wazuh SIEM
 - Docker
@@ -21,7 +21,7 @@ In this project, I deployed Wazuh using Docker and configured multiple security 
 
 ---
 
-🔍 Key Features Implemented
+### 🔍 Key Features Implemented
 
 🗂️ File Integrity Monitoring (FIM)
 
@@ -45,7 +45,7 @@ Configured automated response actions to block suspicious activity when predefin
 
 ---
 
-📋 System Requirements
+### 📋 System Requirements
 
 Wazuh Stack
 
@@ -63,7 +63,7 @@ Wazuh Agent
 
 ---
 
-🏗️ Architecture
+### 🏗️ Architecture
 ```text
 Kali Linux Host
        │
@@ -84,7 +84,10 @@ VirusTotal   AlienVault    MITRE ATT&CK
 ```
 ---
 
-## 🚨 Threat Validation Results
+### 🚨 Threat Validation Results
+
+The environment was tested using multiple security scenarios to verify detection and response capabilities.
+
 
 | Test Scenario | Method | Result |
 |---------------|----------|----------|
@@ -95,7 +98,7 @@ VirusTotal   AlienVault    MITRE ATT&CK
 | Active Response | Triggered a VirusTotal detection event | ✅ Automated blocking action executed |
 ---
 
-📁 Project Structure
+### 📁 Project Structure
 ```text
 wazuh-docker/
 └── single-node/
@@ -123,38 +126,39 @@ Key Components:
 ```
 ---
 
-🚀 Deployment Steps
+### 🚀 Deployment Steps
 
-Deploy Wazuh Stack
+#### Environment Setup
 ```text
-sudo apt update
-sudo apt install docker.io docker-compose git -y
+sudo apt update && sudo apt upgrade -y
+sudo apt install docker.io -y
+sudo systemctl start docker && sudo systemctl enable docker
+sudo usermod -aG docker $USER
+sudo apt install docker-compose -y
+```
 
-git clone https://github.com/wazuh/wazuh-docker.git -b v4.14.0
-
+#### Deploy Wazuh Stack
+```text
 cd wazuh-docker/single-node
 
-docker compose -f generate-indexer-certs.yml run --rm generator
+# Generate SSL certificates
+docker compose -f generate-indexer-certs.yml run --rm generator   
 
-docker-compose up -d
+# Generate SSL certificates
+docker-compose up -d   # Start containers
 ```
-Install and Configure Wazuh Agent
+
+#### Install and Configure Wazuh Agent
 ```text
 sudo apt install wazuh-agent -y
-sudo nano /var/ossec/etc/ossec.conf
-```
-Configure manager address:
-```text
-<address>127.0.0.1</address>
+sudo nano /var/ossec/etc/ossec.conf   # Set <address>127.0.0.1</address>
 
-Start the agent:
-
-sudo systemctl enable wazuh-agent
-sudo systemctl start wazuh-agent
+#start the agent
+sudo systemctl enable wazuh-agent && sudo systemctl start wazuh-agent  
 ```
 ---
 
-🖥️ Access Dashboard
+### 🖥️ Access Dashboard
 ```text
 URL
 
@@ -168,28 +172,13 @@ Password: SecretPassword
 ```
 ---
 
-📸 Screenshots
+### 📸 Screenshots
 
 Project screenshots demonstrating deployment, monitoring, alert generation, VirusTotal integration, MITRE ATT&CK mapping, and Active Response are available in the screenshots directory.
 
 ---
 
-🧠 What I Learned
-
-Through this project, I gained hands-on experience with:
-
-- SIEM Deployment and Administration
-- Security Monitoring
-- Log Analysis
-- Threat Detection
-- Threat Intelligence Integration
-- Incident Response Concepts
-- Linux Administration
-- Docker-Based Deployments
-
----
-
-## Author
+### Author
 
 **Shifana Sherin OP**
 
