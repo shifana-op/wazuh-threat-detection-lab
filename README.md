@@ -84,17 +84,15 @@ VirusTotal   AlienVault    MITRE ATT&CK
 
 ---
 
-🚨 Threat Validation Results
+## 🚨 Threat Validation Results
 
-The environment was tested using multiple security scenarios to verify detection and response capabilities.
-
-Test Scenario| Method| Result
-File Integrity Monitoring (FIM)| Created, modified, and deleted files inside the monitored directory| ✅ Wazuh generated real-time alerts
-VirusTotal Integration| Uploaded an EICAR test file to the monitored directory| ✅ File hash analyzed and VirusTotal alert generated
-AlienVault OTX Integration| Queried a suspicious IP address using the custom OTX integration script| ✅ Threat intelligence data successfully retrieved
-MITRE ATT&CK Mapping| Accessed sensitive files and simulated attack activities| ✅ Events mapped to relevant MITRE ATT&CK techniques
-Active Response| Triggered a VirusTotal detection event| ✅ Automated response action executed successfully
-
+| Test Scenario | Method | Result |
+|---------------|----------|----------|
+| File Integrity Monitoring (FIM) | Created, modified, and deleted files in a monitored directory | ✅ Real-time alerts generated |
+| VirusTotal Integration | Uploaded an EICAR test file to the monitored directory | ✅ Malicious file detected and alert generated |
+| AlienVault OTX Integration | Queried a suspicious IP using the OTX integration script | ✅ Threat intelligence data retrieved |
+| MITRE ATT&CK Mapping | Simulated suspicious activities and monitored alerts | ✅ Events mapped to MITRE ATT&CK techniques |
+| Active Response | Triggered a VirusTotal detection event | ✅ Automated blocking action executed |
 ---
 
 📁 Project Structure
