@@ -1,6 +1,6 @@
 # 🛡️ WAZUH Threat Detection Lab
 
->Centralized Security Monitoring, Threat Intelligence, and Automated Incident Response
+*Centralized Security Monitoring, Threat Intelligence, and Automated Incident Response*
 ---
 
 ## 📌 Project Overview
